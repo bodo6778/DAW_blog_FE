@@ -11,6 +11,7 @@ const Layout: React.FC = ({ children }) => {
       <Stack direction="row" spacing={2}>
         <Button onClick={() => router.push("/")}>Home</Button>
         <Button onClick={() => router.push("/login")}>Login</Button>
+        <Button onClick={() => router.push("/register")}>Register</Button>
       </Stack>
       {children}
       <DarkModeSwitch />

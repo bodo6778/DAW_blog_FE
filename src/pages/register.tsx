@@ -13,29 +13,31 @@ import { useRouter } from "next/router";
 import React, { SyntheticEvent, useState } from "react";
 import Layout from "../components/Layout";
 
-const Login: React.FC = () => {
-  const router = useRouter();
-
-  const [email, setInputEmail] = useState("");
-  const [password, setInputPassword] = useState("");
+const Register: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isError, setIsError] = useState(false);
 
-  const handleInputEmailChange = (e) => setInputEmail(e.target.value);
-  const handleInputPasswordChange = (e) => setInputPassword(e.target.value);
+  const router = useRouter();
+
+  const handleInputNameChange = (e) => setName(e.target.value);
+  const handleInputEmailChange = (e) => setEmail(e.target.value);
+  const handleInputPasswordChange = (e) => setPassword(e.target.value);
 
   const submitForm = async (e: SyntheticEvent) => {
     e.preventDefault();
-    await fetch("http://localhost:8000/api/login", {
+    await fetch("http://localhost:8000/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
       body: JSON.stringify({
+        name,
         email,
         password,
       }),
     });
 
-    router.push("/");
+    router.push("/login");
   };
 
   return (
@@ -43,9 +45,16 @@ const Login: React.FC = () => {
       <Box marginY="auto">
         <Stack spacing={2} align="center">
           <Text fontSize="32" color="ButtonText">
-            Welcome back!
+            Create an account:
           </Text>
-          <FormControl isInvalid={isError}>
+          <FormControl isInvalid={isError} onSubmit={submitForm}>
+            <FormLabel htmlFor="name">Name</FormLabel>
+            <Input
+              id="name"
+              type="name"
+              value={name}
+              onChange={handleInputNameChange}
+            />
             <FormLabel htmlFor="email">Email</FormLabel>
             <Input
               id="email"
@@ -71,4 +80,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
