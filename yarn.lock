@@ -772,6 +772,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fontsource/montserrat@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.2.tgz#95c38172b134db4ed7d2d728513c0abbef54fdb1"
+  integrity sha512-RRrXoTlHYLg5CA+RaxVVnosU2RDO4NiZgRmgD1o1d6lm07Dvuzsr0JPALcm5I4VqZw5bzx4nIz2u+T5LOR7W7w==
+
 "@fontsource/open-sans@^4.5.2":
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.2.tgz#6953650035d5b42be645013b1465544d0af49d7d"
